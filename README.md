@@ -73,7 +73,7 @@ The CLI tarball is not notarized. Clear the quarantine flag on the binaries befo
 xattr -d com.apple.quarantine mtpprobe octavo-sync octavo-convert
 ```
 
-Requires macOS 26 or later on Apple Silicon.
+Requires macOS 15 or later. Release builds are Apple Silicon only; on an Intel Mac, build from source.
 
 ## Tech stack
 
@@ -88,7 +88,7 @@ No external dependencies at all — SwiftPM resolves nothing, everything comes f
 | `SyncEngine` | Library↔device diff, on-device manifest, conversion cache, transfer. |
 | `Octavo` | **SwiftUI** app: `@MainActor @Observable` model over a `DeviceController` actor. |
 
-Swift 6 language mode with strict concurrency, Swift Testing, SwiftPM, macOS 26+, Apple Silicon.
+Swift 6 language mode with strict concurrency, Swift Testing, SwiftPM, macOS 15+, Apple Silicon or Intel.
 Dependencies run one way: `Octavo → SyncEngine → {MTPKit, CalibreLibrary, KindleFormat}`.
 
 ## Build from source
